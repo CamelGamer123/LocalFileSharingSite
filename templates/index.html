@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Test Site</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<h1>Yuki File Sharing</h1>
+<h2>Downloads</h2>
+{% for key, data in files.items() %}
+    <button class="button" onclick="location.href='/{{ data.downloadName }}'">Download {{ data.filename }}</button><br>
+{% endfor %}
+
+<h2>Upload</h2>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file">
+    <input type="submit" value="Upload" name="submit">
+</form>
+
+</body>
+</html>
