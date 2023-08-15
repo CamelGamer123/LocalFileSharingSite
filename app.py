@@ -36,7 +36,7 @@ def scanDirectory() -> Dict[str, Dict[str, str]]:
     for root, dirs, filenames in walk(getcwd() + "/Files"):
         for filename in filenames:
             assert isinstance(filename, str)
-            files[filename] = {'filename': filename.replace("_", " ").title(), 'downloadName': filename.replace(" ", "_")}
+            files[filename] = {'filename': filename.replace("_", " ").title(), 'downloadName': filename}
 
     return files
 
